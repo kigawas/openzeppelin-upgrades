@@ -1,0 +1,1014 @@
+{
+  "fileName": "StorageMocks2.sol",
+  "contractName": "StorageMockChainChild",
+  "source": "pragma solidity ^0.5.0;\n\nimport \"./StorageMocks.sol\";\nimport \"mock-dependency/contracts/DependencyStorageMock.sol\";\n\ncontract StorageMockWithReferences {\n  StorageMockWithEnums.MyEnum internal my_enum;\n  StorageMockWithStructs.MyStruct internal my_struct;\n  SimpleStorageMock internal my_contract;\n}\n\ncontract StorageMockWithNodeModulesReferences {\n  DependencyStorageMock.MyEnum internal my_enum;\n  DependencyStorageMock.MyStruct internal my_struct;\n  DependencyStorageMock internal my_contract;\n}\n\ncontract StorageMockChainBase {\n  uint256 internal base;\n}\n\ncontract StorageMockChainA1 is StorageMockChainBase {\n  uint256 internal a1;\n  uint256 internal a2;\n}\n\ncontract StorageMockChainA2 is StorageMockChainA1 {\n  uint256 public a3;\n  uint256 public a4;\n}\n\ncontract StorageMockChainB is StorageMockChainBase {\n  uint256 internal b1;\n  uint256 internal b2;\n}\n\ncontract StorageMockChainChild is StorageMockChainA2, StorageMockChainB {\n  uint256 internal child;\n\n  function slots() public pure returns(uint256 baseSlot, uint256 a1Slot, uint256 a3Slot, uint256 b1Slot, uint256 childSlot) {\n    assembly {\n      baseSlot := base_slot\n      a1Slot := a1_slot\n      a3Slot := a3_slot\n      b1Slot := b1_slot\n      childSlot := child_slot\n    }\n  }\n}",
+  "sourcePath": "contracts/mocks/StorageMocks2.sol",
+  "sourceMap": "862:383:19:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;862:383:19;;;;;;;",
+  "deployedSourceMap": "862:383:19:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;862:383:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;965:278;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;717:17;;;:::i;:::-;;;;;;;;;;;;;;;;;;;738;;;:::i;:::-;;;;;;;;;;;;;;;;;;;965:278;1002:16;1020:14;1036;1052;1068:17;1122:9;1110:21;;1148:7;1138:17;;1172:7;1162:17;;1196:7;1186:17;;1223:10;1210:23;;1102:137;;;;;:::o;717:17::-;;;;:::o;738:::-;;;;:::o",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "slots",
+      "outputs": [
+        {
+          "name": "baseSlot",
+          "type": "uint256"
+        },
+        {
+          "name": "a1Slot",
+          "type": "uint256"
+        },
+        {
+          "name": "a3Slot",
+          "type": "uint256"
+        },
+        {
+          "name": "b1Slot",
+          "type": "uint256"
+        },
+        {
+          "name": "childSlot",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "a3",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "a4",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "contracts/mocks/StorageMocks2.sol",
+    "exportedSymbols": {
+      "StorageMockChainA1": [
+        4592
+      ],
+      "StorageMockChainA2": [
+        4599
+      ],
+      "StorageMockChainB": [
+        4606
+      ],
+      "StorageMockChainBase": [
+        4585
+      ],
+      "StorageMockChainChild": [
+        4628
+      ],
+      "StorageMockWithNodeModulesReferences": [
+        4582
+      ],
+      "StorageMockWithReferences": [
+        4575
+      ]
+    },
+    "id": 4629,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4566,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:19"
+      },
+      {
+        "absolutePath": "contracts/mocks/StorageMocks.sol",
+        "file": "./StorageMocks.sol",
+        "id": 4567,
+        "nodeType": "ImportDirective",
+        "scope": 4629,
+        "sourceUnit": 4565,
+        "src": "25:28:19",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "mock-dependency/contracts/DependencyStorageMock.sol",
+        "file": "mock-dependency/contracts/DependencyStorageMock.sol",
+        "id": 4568,
+        "nodeType": "ImportDirective",
+        "scope": 4629,
+        "sourceUnit": 6412,
+        "src": "54:61:19",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4575,
+        "linearizedBaseContracts": [
+          4575
+        ],
+        "name": "StorageMockWithReferences",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4570,
+            "name": "my_enum",
+            "nodeType": "VariableDeclaration",
+            "scope": 4575,
+            "src": "156:44:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_enum$_MyEnum_$4518",
+              "typeString": "enum StorageMockWithEnums.MyEnum"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 4569,
+              "name": "StorageMockWithEnums.MyEnum",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4518,
+              "src": "156:27:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_MyEnum_$4518",
+                "typeString": "enum StorageMockWithEnums.MyEnum"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 4572,
+            "name": "my_struct",
+            "nodeType": "VariableDeclaration",
+            "scope": 4575,
+            "src": "204:50:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_MyStruct_$4501_storage",
+              "typeString": "struct StorageMockWithStructs.MyStruct"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 4571,
+              "name": "StorageMockWithStructs.MyStruct",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4501,
+              "src": "204:31:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_MyStruct_$4501_storage_ptr",
+                "typeString": "struct StorageMockWithStructs.MyStruct"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 4574,
+            "name": "my_contract",
+            "nodeType": "VariableDeclaration",
+            "scope": 4575,
+            "src": "258:38:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_SimpleStorageMock_$4380",
+              "typeString": "contract SimpleStorageMock"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 4573,
+              "name": "SimpleStorageMock",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4380,
+              "src": "258:17:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SimpleStorageMock_$4380",
+                "typeString": "contract SimpleStorageMock"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 4629,
+        "src": "117:182:19"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4582,
+        "linearizedBaseContracts": [
+          4582
+        ],
+        "name": "StorageMockWithNodeModulesReferences",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4577,
+            "name": "my_enum",
+            "nodeType": "VariableDeclaration",
+            "scope": 4582,
+            "src": "351:45:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_enum$_MyEnum_$6407",
+              "typeString": "enum DependencyStorageMock.MyEnum"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 4576,
+              "name": "DependencyStorageMock.MyEnum",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 6407,
+              "src": "351:28:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_MyEnum_$6407",
+                "typeString": "enum DependencyStorageMock.MyEnum"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 4579,
+            "name": "my_struct",
+            "nodeType": "VariableDeclaration",
+            "scope": 4582,
+            "src": "400:49:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_MyStruct_$6410_storage",
+              "typeString": "struct DependencyStorageMock.MyStruct"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 4578,
+              "name": "DependencyStorageMock.MyStruct",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 6410,
+              "src": "400:30:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_MyStruct_$6410_storage_ptr",
+                "typeString": "struct DependencyStorageMock.MyStruct"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 4581,
+            "name": "my_contract",
+            "nodeType": "VariableDeclaration",
+            "scope": 4582,
+            "src": "453:42:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_DependencyStorageMock_$6411",
+              "typeString": "contract DependencyStorageMock"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 4580,
+              "name": "DependencyStorageMock",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 6411,
+              "src": "453:21:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DependencyStorageMock_$6411",
+                "typeString": "contract DependencyStorageMock"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 4629,
+        "src": "301:197:19"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4585,
+        "linearizedBaseContracts": [
+          4585
+        ],
+        "name": "StorageMockChainBase",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4584,
+            "name": "base",
+            "nodeType": "VariableDeclaration",
+            "scope": 4585,
+            "src": "534:21:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 4583,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "534:7:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 4629,
+        "src": "500:58:19"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 4586,
+              "name": "StorageMockChainBase",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4585,
+              "src": "591:20:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_StorageMockChainBase_$4585",
+                "typeString": "contract StorageMockChainBase"
+              }
+            },
+            "id": 4587,
+            "nodeType": "InheritanceSpecifier",
+            "src": "591:20:19"
+          }
+        ],
+        "contractDependencies": [
+          4585
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4592,
+        "linearizedBaseContracts": [
+          4592,
+          4585
+        ],
+        "name": "StorageMockChainA1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4589,
+            "name": "a1",
+            "nodeType": "VariableDeclaration",
+            "scope": 4592,
+            "src": "616:19:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 4588,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "616:7:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 4591,
+            "name": "a2",
+            "nodeType": "VariableDeclaration",
+            "scope": 4592,
+            "src": "639:19:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 4590,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "639:7:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 4629,
+        "src": "560:101:19"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 4593,
+              "name": "StorageMockChainA1",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4592,
+              "src": "694:18:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_StorageMockChainA1_$4592",
+                "typeString": "contract StorageMockChainA1"
+              }
+            },
+            "id": 4594,
+            "nodeType": "InheritanceSpecifier",
+            "src": "694:18:19"
+          }
+        ],
+        "contractDependencies": [
+          4585,
+          4592
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4599,
+        "linearizedBaseContracts": [
+          4599,
+          4592,
+          4585
+        ],
+        "name": "StorageMockChainA2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4596,
+            "name": "a3",
+            "nodeType": "VariableDeclaration",
+            "scope": 4599,
+            "src": "717:17:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 4595,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "717:7:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 4598,
+            "name": "a4",
+            "nodeType": "VariableDeclaration",
+            "scope": 4599,
+            "src": "738:17:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 4597,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "738:7:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 4629,
+        "src": "663:95:19"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 4600,
+              "name": "StorageMockChainBase",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4585,
+              "src": "790:20:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_StorageMockChainBase_$4585",
+                "typeString": "contract StorageMockChainBase"
+              }
+            },
+            "id": 4601,
+            "nodeType": "InheritanceSpecifier",
+            "src": "790:20:19"
+          }
+        ],
+        "contractDependencies": [
+          4585
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4606,
+        "linearizedBaseContracts": [
+          4606,
+          4585
+        ],
+        "name": "StorageMockChainB",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4603,
+            "name": "b1",
+            "nodeType": "VariableDeclaration",
+            "scope": 4606,
+            "src": "815:19:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 4602,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "815:7:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 4605,
+            "name": "b2",
+            "nodeType": "VariableDeclaration",
+            "scope": 4606,
+            "src": "838:19:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 4604,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "838:7:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 4629,
+        "src": "760:100:19"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 4607,
+              "name": "StorageMockChainA2",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4599,
+              "src": "896:18:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_StorageMockChainA2_$4599",
+                "typeString": "contract StorageMockChainA2"
+              }
+            },
+            "id": 4608,
+            "nodeType": "InheritanceSpecifier",
+            "src": "896:18:19"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 4609,
+              "name": "StorageMockChainB",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4606,
+              "src": "916:17:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_StorageMockChainB_$4606",
+                "typeString": "contract StorageMockChainB"
+              }
+            },
+            "id": 4610,
+            "nodeType": "InheritanceSpecifier",
+            "src": "916:17:19"
+          }
+        ],
+        "contractDependencies": [
+          4585,
+          4592,
+          4599,
+          4606
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4628,
+        "linearizedBaseContracts": [
+          4628,
+          4606,
+          4599,
+          4592,
+          4585
+        ],
+        "name": "StorageMockChainChild",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4612,
+            "name": "child",
+            "nodeType": "VariableDeclaration",
+            "scope": 4628,
+            "src": "938:22:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 4611,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "938:7:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 4626,
+              "nodeType": "Block",
+              "src": "1087:156:19",
+              "statements": [
+                {
+                  "externalReferences": [
+                    {
+                      "baseSlot": {
+                        "declaration": 4615,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "1110:8:19",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "base_slot": {
+                        "declaration": 4584,
+                        "isOffset": false,
+                        "isSlot": true,
+                        "src": "1122:9:19",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "a3Slot": {
+                        "declaration": 4619,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "1162:6:19",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "a1Slot": {
+                        "declaration": 4617,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "1138:6:19",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "a1_slot": {
+                        "declaration": 4589,
+                        "isOffset": false,
+                        "isSlot": true,
+                        "src": "1148:7:19",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "b1Slot": {
+                        "declaration": 4621,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "1186:6:19",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "b1_slot": {
+                        "declaration": 4603,
+                        "isOffset": false,
+                        "isSlot": true,
+                        "src": "1196:7:19",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "a3_slot": {
+                        "declaration": 4596,
+                        "isOffset": false,
+                        "isSlot": true,
+                        "src": "1172:7:19",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "childSlot": {
+                        "declaration": 4623,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "1210:9:19",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "child_slot": {
+                        "declaration": 4612,
+                        "isOffset": false,
+                        "isSlot": true,
+                        "src": "1223:10:19",
+                        "valueSize": 1
+                      }
+                    }
+                  ],
+                  "id": 4625,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{\n    baseSlot := base_slot\n    a1Slot := a1_slot\n    a3Slot := a3_slot\n    b1Slot := b1_slot\n    childSlot := child_slot\n}",
+                  "src": "1093:150:19"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4627,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "slots",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4613,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "979:2:19"
+            },
+            "returnParameters": {
+              "id": 4624,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4615,
+                  "name": "baseSlot",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4627,
+                  "src": "1002:16:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4614,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1002:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4617,
+                  "name": "a1Slot",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4627,
+                  "src": "1020:14:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4616,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1020:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4619,
+                  "name": "a3Slot",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4627,
+                  "src": "1036:14:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4618,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1036:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4621,
+                  "name": "b1Slot",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4627,
+                  "src": "1052:14:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4620,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1052:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4623,
+                  "name": "childSlot",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4627,
+                  "src": "1068:17:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4622,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1068:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1001:85:19"
+            },
+            "scope": 4628,
+            "src": "965:278:19",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 4629,
+        "src": "862:383:19"
+      }
+    ],
+    "src": "0:1245:19"
+  },
+  "bytecode": "0x608060405234801561001057600080fd5b5061010b806100206000396000f3fe6080604052348015600f57600080fd5b5060043610603c5760003560e01c806348547d691460415780639426eef8146079578063f74ea418146095575b600080fd5b604760b1565b604051808681526020018581526020018481526020018381526020018281526020019550505050505060405180910390f35b607f60d3565b6040518082815260200191505060405180910390f35b609b60d9565b6040518082815260200191505060405180910390f35b6000806000806000809450600193506003925060059150600790509091929394565b60035481565b6004548156fea165627a7a72305820ebb7c82fc76f693e0eb463df910f85608157cad193f28ee155cf599a612714c50029",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b5060043610603c5760003560e01c806348547d691460415780639426eef8146079578063f74ea418146095575b600080fd5b604760b1565b604051808681526020018581526020018481526020018381526020018281526020019550505050505060405180910390f35b607f60d3565b6040518082815260200191505060405180910390f35b609b60d9565b6040518082815260200191505060405180910390f35b6000806000806000809450600193506003925060059150600790509091929394565b60035481565b6004548156fea165627a7a72305820ebb7c82fc76f693e0eb463df910f85608157cad193f28ee155cf599a612714c50029",
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.3+commit.10d17f24.Emscripten.clang",
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "evmVersion": "constantinople"
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "fileName": "WithLibrary.sol",
+  "contractName": "WithLibraryMock",
+  "source": "pragma solidity ^0.5.0;\n\nlibrary MyLibrary {\n  function answer() external pure returns(uint256) {\n    return 42;\n  }\n}\n\ncontract WithLibraryMock {\n  function reply() external pure returns(uint256) {\n    return MyLibrary.answer();\n  }\n}",
+  "sourcePath": "contracts/mocks/WithLibrary.sol",
+  "sourceMap": "120:115:25:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;120:115:25;;;;;;;",
+  "deployedSourceMap": "120:115:25:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;120:115:25;;;;;;;;;;;;;;;;;;;149:84;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;188:7;210:9;:16;:18;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;210:18:25;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;210:18:25;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;210:18:25;;;;;;;;;;;;;;;;203:25;;149:84;:::o",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "reply",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "contracts/mocks/WithLibrary.sol",
+    "exportedSymbols": {
+      "MyLibrary": [
+        4910
+      ],
+      "WithLibraryMock": [
+        4921
+      ]
+    },
+    "id": 4922,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4901,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:25"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4910,
+        "linearizedBaseContracts": [
+          4910
+        ],
+        "name": "MyLibrary",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 4908,
+              "nodeType": "Block",
+              "src": "96:20:25",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "3432",
+                    "id": 4906,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "109:2:25",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_42_by_1",
+                      "typeString": "int_const 42"
+                    },
+                    "value": "42"
+                  },
+                  "functionReturnParameters": 4905,
+                  "id": 4907,
+                  "nodeType": "Return",
+                  "src": "102:9:25"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4909,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "answer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4902,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "62:2:25"
+            },
+            "returnParameters": {
+              "id": 4905,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4904,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4909,
+                  "src": "87:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4903,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "87:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "86:9:25"
+            },
+            "scope": 4910,
+            "src": "47:69:25",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4922,
+        "src": "25:93:25"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4921,
+        "linearizedBaseContracts": [
+          4921
+        ],
+        "name": "WithLibraryMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 4919,
+              "nodeType": "Block",
+              "src": "197:36:25",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4915,
+                        "name": "MyLibrary",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4910,
+                        "src": "210:9:25",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_MyLibrary_$4910_$",
+                          "typeString": "type(library MyLibrary)"
+                        }
+                      },
+                      "id": 4916,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "answer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4909,
+                      "src": "210:16:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_pure$__$returns$_t_uint256_$",
+                        "typeString": "function () pure returns (uint256)"
+                      }
+                    },
+                    "id": 4917,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "210:18:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 4914,
+                  "id": 4918,
+                  "nodeType": "Return",
+                  "src": "203:25:25"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4920,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reply",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4911,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "163:2:25"
+            },
+            "returnParameters": {
+              "id": 4914,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4913,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4920,
+                  "src": "188:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4912,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "188:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "187:9:25"
+            },
+            "scope": 4921,
+            "src": "149:84:25",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4922,
+        "src": "120:115:25"
+      }
+    ],
+    "src": "0:235:25"
+  },
+  "bytecode": "0x608060405234801561001057600080fd5b5060f88061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80636e39397514602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b600073__MyLibrary_____________________________6385bb7d696040518163ffffffff1660e01b815260040160206040518083038186803b158015608e57600080fd5b505af415801560a1573d6000803e3d6000fd5b505050506040513d602081101560b657600080fd5b810190808051906020019092919050505090509056fea165627a7a723058203d1adc54bd8b758e124d612ca46b015498a6cd1a415a24130877ef34d7048e0c0029",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c80636e39397514602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b600073__MyLibrary_____________________________6385bb7d696040518163ffffffff1660e01b815260040160206040518083038186803b158015608e57600080fd5b505af415801560a1573d6000803e3d6000fd5b505050506040513d602081101560b657600080fd5b810190808051906020019092919050505090509056fea165627a7a723058203d1adc54bd8b758e124d612ca46b015498a6cd1a415a24130877ef34d7048e0c0029",
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.3+commit.10d17f24.Emscripten.clang",
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "evmVersion": "constantinople"
+  }
+}

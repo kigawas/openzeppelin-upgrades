@@ -1442,7 +1442,10 @@
   "compiler": {
     "name": "solc",
     "version": "0.5.3+commit.10d17f24.Emscripten.clang",
-    "optimizer": {},
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
     "evmVersion": "constantinople"
   }
 }
