@@ -15,3 +15,4 @@ export default class Proxy {
     getStorageAt(position: string): Promise<string>;
     private checkAdmin;
 }
+//# sourceMappingURL=Proxy.d.ts.map

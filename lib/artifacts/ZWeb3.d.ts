@@ -43,3 +43,4 @@ export default class ZWeb3 {
     static getNetwork(): Promise<number>;
     static getNetworkName(): Promise<string>;
 }
+//# sourceMappingURL=ZWeb3.d.ts.map

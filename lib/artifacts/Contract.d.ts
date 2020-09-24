@@ -20,6 +20,7 @@ export default interface Contract extends Web3Contract {
         storageInfo: StorageLayoutInfo;
         warnings: any;
     } & Artifact;
+    upgradeable?: Contract;
 }
 export declare enum ContractMethodMutability {
     Constant = 0,
@@ -41,3 +42,4 @@ interface MethodArg {
 }
 export declare function getConstructorInputs(contract: Contract): MethodArg[];
 export {};
+//# sourceMappingURL=Contract.d.ts.map

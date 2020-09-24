@@ -5,3 +5,4 @@ export declare type AbstractType<T = {}> = () => void & {
 };
 export declare type GetMixinType<T extends Callable> = InstanceType<ReturnType<T>>;
 export default Constructable;
+//# sourceMappingURL=Mixin.d.ts.map

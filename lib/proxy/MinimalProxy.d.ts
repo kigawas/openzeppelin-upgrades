@@ -4,3 +4,4 @@ export default class MinimalProxy {
     constructor(address: string);
     implementation(): Promise<string>;
 }
+//# sourceMappingURL=MinimalProxy.d.ts.map

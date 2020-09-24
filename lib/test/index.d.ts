@@ -17,3 +17,4 @@ declare const behaviors: {
     shouldBehaveLikeOwnable: typeof shouldBehaveLikeOwnable;
 };
 export { helpers, behaviors };
+//# sourceMappingURL=index.d.ts.map

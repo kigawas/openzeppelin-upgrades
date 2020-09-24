@@ -16,3 +16,4 @@ export default class Package {
     newVersion(version: string, content?: string): Promise<ImplementationDirectory>;
     getDirectory(version: string): Promise<ImplementationDirectory | never>;
 }
+//# sourceMappingURL=Package.d.ts.map

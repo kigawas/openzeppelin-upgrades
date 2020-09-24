@@ -8,3 +8,4 @@ export interface Operation {
     original: StorageInfo;
 }
 export declare function compareStorageLayouts(original: StorageLayoutInfo, updated: StorageLayoutInfo): Operation[];
+//# sourceMappingURL=Layout.d.ts.map

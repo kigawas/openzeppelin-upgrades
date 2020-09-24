@@ -46,3 +46,4 @@ declare const _default: {
     _calculateActualGas(estimatedGas: number): Promise<number>;
 };
 export default _default;
+//# sourceMappingURL=Transactions.d.ts.map

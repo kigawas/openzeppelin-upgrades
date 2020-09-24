@@ -7,3 +7,4 @@ export declare function hasUnlinkedVariables(bytecode: string): boolean;
 export declare function tryRemoveMetadata(bytecode: string): string;
 export declare function replaceSolidityLibAddress(bytecode: string, address: string): string;
 export declare function isSolidityLib(bytecode: string): boolean;
+//# sourceMappingURL=Bytecode.d.ts.map

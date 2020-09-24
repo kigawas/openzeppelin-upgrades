@@ -25,3 +25,4 @@ export default class App {
     private _createProxy;
     private _createProxyAndCall;
 }
+//# sourceMappingURL=App.d.ts.map

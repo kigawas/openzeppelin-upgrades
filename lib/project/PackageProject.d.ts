@@ -15,3 +15,4 @@ export default class PackageProject extends BasePackageProject {
     getCurrentDirectory(): Promise<ImplementationDirectory>;
     getCurrentVersion(): Promise<string>;
 }
+//# sourceMappingURL=PackageProject.d.ts.map

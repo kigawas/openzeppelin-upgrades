@@ -10,8 +10,9 @@ export interface ValidationInfo {
     uninitializedBaseContracts: any[];
     storageUncheckedVars?: StorageInfo[];
     storageDiff?: Operation[];
-    importsVanillaContracts?: string[];
+    importsEthereumPackageContracts?: string[];
 }
-export declare function validate(contract: Contract, existingContractInfo?: any, buildArtifacts?: BuildArtifacts): any;
+export declare function validate(contract: Contract, existingContractInfo?: any, buildArtifacts?: BuildArtifacts): ValidationInfo;
 export declare function newValidationErrors(validations: any, existingValidations?: any): any;
 export declare function validationPasses(validations: any): boolean;
+//# sourceMappingURL=index.d.ts.map

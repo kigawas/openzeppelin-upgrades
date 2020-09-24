@@ -68,3 +68,4 @@ declare const AppProject_base: {
 export default class AppProject extends AppProject_base {
 }
 export {};
+//# sourceMappingURL=AppProject.d.ts.map

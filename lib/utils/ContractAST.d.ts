@@ -52,3 +52,4 @@ export default class ContractAST {
     private _isValidMethodName;
 }
 export {};
+//# sourceMappingURL=ContractAST.d.ts.map

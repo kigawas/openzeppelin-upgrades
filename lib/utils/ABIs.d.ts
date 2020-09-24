@@ -24,3 +24,4 @@ declare const _default: {
     callDescription: typeof callDescription;
 };
 export default _default;
+//# sourceMappingURL=ABIs.d.ts.map

@@ -9,3 +9,4 @@ declare const _default: {
     semanticVersionEqual: typeof semanticVersionEqual;
 };
 export default _default;
+//# sourceMappingURL=Semver.d.ts.map

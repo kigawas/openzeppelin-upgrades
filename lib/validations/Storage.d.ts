@@ -7,3 +7,4 @@ export interface StorageLayoutInfo {
     types: TypeInfoMapping;
     storage: StorageInfo[];
 }
+//# sourceMappingURL=Storage.d.ts.map

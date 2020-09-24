@@ -10,3 +10,4 @@ export default class SimpleProject extends BaseSimpleProject {
     changeProxyAdmin(proxyAddress: string, newAdmin: string): Promise<Proxy>;
     getAdminAddress(): Promise<string>;
 }
+//# sourceMappingURL=SimpleProject.d.ts.map

@@ -5,3 +5,4 @@ declare const _default: {
     inTransaction: typeof inTransaction;
 };
 export default _default;
+//# sourceMappingURL=assertEvent.d.ts.map

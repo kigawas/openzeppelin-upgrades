@@ -16,3 +16,4 @@ export default class ProxyFactory {
     getDeploymentAddress(salt: string, sender?: string): Promise<string>;
     getDefaultSender(): Promise<string>;
 }
+//# sourceMappingURL=ProxyFactory.d.ts.map

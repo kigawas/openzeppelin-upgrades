@@ -59,3 +59,4 @@ declare type LogSpinFunction = LogFunction & LogTypeFunctions & {
     onVerbose: LogFunction;
 };
 export {};
+//# sourceMappingURL=Logger.d.ts.map

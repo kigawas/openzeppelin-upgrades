@@ -24,5 +24,7 @@ export default class Contracts {
     static setLocalContractsDir(dir: string): void;
     static setProjectRoot(dir: string): void;
     static setArtifactsDefaults(defaults: any): void;
-    private static _getFromPath;
+    private static getFromPath;
+    private static getFromPathWithUpgradeable;
 }
+//# sourceMappingURL=Contracts.d.ts.map

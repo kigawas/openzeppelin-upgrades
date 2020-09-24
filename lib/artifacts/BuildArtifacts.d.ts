@@ -26,3 +26,4 @@ export declare class BuildArtifacts {
     getSourcePathFromArtifact(artifact: Artifact): string;
     private registerArtifactForSourcePath;
 }
+//# sourceMappingURL=BuildArtifacts.d.ts.map

@@ -9,10 +9,11 @@ export default class ProxyAdmin {
     constructor(contract: any, txParams?: TxParams);
     getProxyImplementation(proxyAddress: string): Promise<string>;
     changeProxyAdmin(proxyAddress: string, newAdmin: string): Promise<void>;
-    upgradeProxy(proxyAddress: string, implementationAddress: string, contract: Contract, initMethodName: string, initArgs: any): Promise<Contract>;
+    upgradeProxy(proxyAddress: string, implementationAddress: string, contract: Contract, initMethodName: string, initArgs: any): Promise<any>;
     transferOwnership(newAdminOwner: string): Promise<void>;
     getOwner(): Promise<string>;
     private checkOwner;
     private _upgradeProxy;
     private _upgradeProxyAndCall;
 }
+//# sourceMappingURL=ProxyAdmin.d.ts.map

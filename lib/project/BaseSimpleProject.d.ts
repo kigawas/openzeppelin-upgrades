@@ -1,3 +1,4 @@
+import Proxy from '../proxy/Proxy';
 import Package from '../application/Package';
 import { ContractInterface } from './AppProject';
 import Contract from '../artifacts/Contract';
@@ -38,7 +39,7 @@ export default abstract class BaseSimpleProject {
     hasDependency(name: string): boolean;
     setDependency(name: string, packageAddress: string, version: string): void;
     unsetDependency(name: string): void;
-    createProxy(contract: any, { packageName, contractName, initMethod, initArgs, redeployIfChanged, admin }?: ContractInterface): Promise<Contract>;
+    createProxy(contract: any, { packageName, contractName, initMethod, initArgs, redeployIfChanged, admin }?: ContractInterface): Promise<Proxy>;
     createProxyWithSalt(contract: any, salt: string, signature?: string, { packageName, contractName, initMethod, initArgs, redeployIfChanged, admin }?: ContractInterface): Promise<Contract>;
     createMinimalProxy(contract: any, { packageName, contractName, initMethod, initArgs, redeployIfChanged }?: ContractInterface): Promise<Contract>;
     getProxyDeploymentAddress(salt: string, sender?: string): Promise<string>;
@@ -51,3 +52,4 @@ export default abstract class BaseSimpleProject {
     protected _getAndLogInitCallData(contract: Contract, initMethodName?: string, initArgs?: string[], implementationAddress?: string, actionLabel?: string, proxyAddress?: string): string | null;
 }
 export {};
+//# sourceMappingURL=BaseSimpleProject.d.ts.map

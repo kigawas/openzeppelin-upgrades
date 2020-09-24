@@ -8,3 +8,4 @@ declare function ProxyAdminProjectMixin<T extends Constructable>(Base: T): {
     };
 } & T;
 export default ProxyAdminProjectMixin;
+//# sourceMappingURL=ProxyAdminProjectMixin.d.ts.map

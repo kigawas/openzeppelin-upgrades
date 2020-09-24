@@ -16,3 +16,4 @@ export default class ImplementationDirectory {
     freeze(): Promise<any>;
     isFrozen(): Promise<boolean>;
 }
+//# sourceMappingURL=ImplementationDirectory.d.ts.map

@@ -19,3 +19,4 @@ export default abstract class BasePackageProject {
     abstract getProjectPackage(): Promise<any>;
     abstract getCurrentVersion(): Promise<any>;
 }
+//# sourceMappingURL=BasePackageProject.d.ts.map
